@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -70,8 +71,7 @@ public class MainActivity extends AppCompatActivity
 
         /*
         Jika dilandscape tidak load ke Halaman Utama
-        Dan sebagai halaman default yaitu Ho
-        meFragment
+        Dan sebagai halaman default yaitu HomeFragment
         */
 
         if (savedInstanceState == null) {
@@ -81,12 +81,6 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.content_main, currentFragment)
                     .commit();
         }
-
-        //TODO 2 set kembali halaman dari title
-        if (savedInstanceState != null) {
-
-        }
-
     }
 
 
@@ -185,15 +179,6 @@ public class MainActivity extends AppCompatActivity
         drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-
-    }
-
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        //TODO 1 menyimpan halaman title yang sedang diakses
 
     }
 }
